@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>苏浩楷 | 机器人方向个人主页</title>
+    <meta
+      name="description"
+      content="苏浩楷的个人主页：南方科技大学机器人专业硕士，包含个人简历、论文与学习笔记。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <header class="site-header">
+      <a class="logo" href="index.html">SUHAOKAI</a>
+      <button class="menu-toggle" aria-label="切换菜单">菜单</button>
+      <nav class="nav">
+        <a href="#about">关于我</a>
+        <a href="#resume">简历</a>
+        <a href="papers.html">Papers</a>
+        <a href="notes.html">学习笔记</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <p class="tag">PERSONAL SITE / CV / RESEARCH LOG</p>
+        <h1>苏浩楷</h1>
+        <p class="subtitle">
+          南方科技大学 硕士二年级 · 机器人专业<br />
+          关注方向：智能控制、机器人感知、具身智能系统
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="papers.html">查看 Papers</a>
+          <a class="btn btn-ghost" href="notes.html">浏览学习笔记</a>
+        </div>
+      </section>
+
+      <section id="about" class="card reveal">
+        <h2>关于我</h2>
+        <p>
+          我是苏浩楷，当前在南方科技大学攻读机器人方向硕士。这个网站既是我的在线简历，也会逐步整理我的论文、项目和学习笔记，记录从问题定义到实验验证的完整过程。
+        </p>
+        <p>
+          我习惯将研究工作拆分为三个层次：理论建模、工程实现、系统验证。希望通过这个站点，与同领域同学和研究者建立更高效的交流。
+        </p>
+      </section>
+
+      <section id="resume" class="grid reveal">
+        <article class="card">
+          <h3>教育背景</h3>
+          <ul>
+            <li>南方科技大学 · 机器人专业 · 硕士在读（M2）</li>
+            <li>研究兴趣：机器人控制、视觉感知、多传感器融合</li>
+            <li>目标：推动算法在真实机器人平台中的落地</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>研究与项目</h3>
+          <ul>
+            <li>移动机器人路径规划与实时避障实验</li>
+            <li>视觉-IMU融合定位系统调参与评测</li>
+            <li>机器人系统工程化部署与鲁棒性测试</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>技术栈</h3>
+          <ul>
+            <li>编程：Python / C++ / MATLAB</li>
+            <li>框架：ROS / PyTorch / OpenCV</li>
+            <li>工具：Git / Linux / LaTeX</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>联系方式</h3>
+          <ul>
+            <li>Email：your_email@example.com</li>
+            <li>GitHub：github.com/yourname</li>
+            <li>Google Scholar：待添加</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card reveal">
+        <h2>最近更新</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <p class="time">2026-02</p>
+            <p>上线个人网站初版，整合简历、论文和学习笔记入口。</p>
+          </div>
+          <div class="timeline-item">
+            <p class="time">2026-03（计划）</p>
+            <p>补充第一篇在投论文简介、实验配置与复现实验记录。</p>
+          </div>
+          <div class="timeline-item">
+            <p class="time">2026-04（计划）</p>
+            <p>发布机器人控制方向系列学习笔记。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> 苏浩楷. Built for research and sharing.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

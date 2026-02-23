@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学习笔记 | 苏浩楷</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-2"></div>
+    <header class="site-header">
+      <a class="logo" href="index.html">SUHAOKAI</a>
+      <button class="menu-toggle" aria-label="切换菜单">菜单</button>
+      <nav class="nav">
+        <a href="index.html">主页</a>
+        <a href="papers.html">Papers</a>
+        <a href="notes.html" class="active">学习笔记</a>
+      </nav>
+    </header>
+
+    <main class="inner-page">
+      <section class="hero small reveal">
+        <p class="tag">LEARNING NOTEBOOK</p>
+        <h1>学习笔记</h1>
+        <p class="subtitle">把课程、论文阅读和实验经验沉淀成可复用的知识模块。</p>
+      </section>
+
+      <section class="notes-grid reveal">
+        <article class="card note-card">
+          <p class="paper-meta">Embodied AI / Model-Based RL</p>
+          <h2>World Model 学习笔记（Survey）</h2>
+          <p>围绕表示学习、动力学建模、想象规划与机器人落地路径的综述笔记，并提供持续更新模板。</p>
+          <a href="world-model-note.html">阅读全文</a>
+        </article>
+
+        <article class="card note-card">
+          <p class="paper-meta">Computer Vision</p>
+          <h2>视觉里程计中的关键点法与直接法比较</h2>
+          <p>对比两类方法在纹理稀缺与快速运动场景下的稳定性差异，并记录参数调试经验。</p>
+          <a href="#">阅读全文（待发布）</a>
+        </article>
+
+        <article class="card note-card">
+          <p class="paper-meta">System Engineering</p>
+          <h2>ROS工程组织与实验复现规范</h2>
+          <p>总结实验目录结构、日志管理和版本控制实践，提高机器人实验迭代效率。</p>
+          <a href="#">阅读全文（待发布）</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> 苏浩楷</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

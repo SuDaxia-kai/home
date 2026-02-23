@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Papers | 苏浩楷</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-1"></div>
+    <header class="site-header">
+      <a class="logo" href="index.html">SUHAOKAI</a>
+      <button class="menu-toggle" aria-label="切换菜单">菜单</button>
+      <nav class="nav">
+        <a href="index.html">主页</a>
+        <a href="papers.html" class="active">Papers</a>
+        <a href="notes.html">学习笔记</a>
+      </nav>
+    </header>
+
+    <main class="inner-page">
+      <section class="hero small reveal">
+        <p class="tag">RESEARCH OUTPUT</p>
+        <h1>Papers</h1>
+        <p class="subtitle">
+          这里会持续更新论文、预印本、在投工作与开源代码链接。
+        </p>
+      </section>
+
+      <section class="paper-list reveal">
+        <article class="card paper-item">
+          <p class="paper-meta">Status: Accepted at IEEE-RAS Humanoids 2025</p>
+          <h2>LIPM-Guided Reinforcement Learning for Stable and Perceptive Locomotion in Bipedal Robots</h2>
+          <p>
+            提出一种受线性倒立摆模型（LIPM）启发的强化学习奖励设计方法，用于提升双足机器人在非结构化户外环境中的稳定性与感知运动能力，并在仿真与真实场景中验证了地形适应性和抗扰性能。
+          </p>
+          <div class="links">
+            <a href="https://arxiv.org/abs/2509.09106" target="_blank" rel="noopener noreferrer">arXiv</a>
+            <a href="https://arxiv.org/pdf/2509.09106" target="_blank" rel="noopener noreferrer">PDF</a>
+          </div>
+        </article>
+
+        <article class="card paper-item">
+          <p class="paper-meta">Status: Draft · 2026</p>
+          <h2>Visual-Inertial Fusion Benchmark on Embedded Robotic Platforms</h2>
+          <p>
+            针对嵌入式平台上的视觉-惯性融合算法进行统一测试，比较精度、延迟和资源开销，形成可复现实验基线。
+          </p>
+          <div class="links">
+            <a href="#">PDF（待上传）</a>
+            <a href="#">Supplementary（待上传）</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> 苏浩楷</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

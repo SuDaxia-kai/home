@@ -1,0 +1,22 @@
+# Paper Note Quality Checklist
+
+- All five sections exist in the required order.
+- Heading hierarchy is valid: one `#` title, `##` sections, and `###` question prompts.
+- Question prompts are headings, not bullet list items.
+- Markdown file is written under `paper-notes/` and path is returned.
+- Process/logic/algorithm/model parts that are hard to explain with text include diagram support.
+- At least one human-readable diagram image exists (`paper-notes/assets/*.svg` or `*.png`) and is embedded in the Markdown.
+- If a paper figure is used, caption includes source location (Figure number or section).
+- If a diagram is self-drawn, matching `draw.io` source exists (`paper-notes/assets/*.drawio`).
+- Diagram layout has no overlap between boxes, labels, and arrows.
+- Diagram is visually balanced (prefer symmetric/grid alignment).
+- Multi-arrow routing keeps visible spacing and avoids crossings when possible.
+- Formulas use valid Markdown LaTeX syntax (`$...$` or `$$...$$`), not backticks.
+- Half-width spaces exist between Chinese-English, Chinese-number, and English-number boundaries.
+- Missing fields are marked as `N/A` with reason.
+- Research problem includes motivation and constraints.
+- Method section includes model I/O and training objective.
+- Experiment section includes setup and baseline comparison.
+- Summary includes contribution, strengths, and critiques.
+- Inferred points are explicitly marked with `推断：`.
+- No fabricated numbers, equations, or citations.

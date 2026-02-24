@@ -1,0 +1,33 @@
+<mxfile host="app.diagrams.net" modified="2026-02-24T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="dreamzero-flow" name="Page-1">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="t" value="DreamZero (WAM) 主流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontStyle=1;fontSize=26;" vertex="1" parent="1">
+          <mxGeometry x="620" y="30" width="560" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="a" value="输入\n语言 c + 视觉历史 o + 本体 q" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="80" y="250" width="300" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="b" value="联合 WAM 训练\nchunk-wise flow matching\n(视频 latent + 动作)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="460" y="230" width="360" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="c" value="闭环推断\nKV cache + GT 观测替换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff8e1;strokeColor=#f9a825;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="900" y="250" width="300" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="d" value="加速栈\nDreamZero-Flash + DiT caching\ncompile/quant/kernel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#6a1b9a;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="220" width="420" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="e" value="结果\n7 Hz 实时控制\n零样本泛化 + 跨 embodiment 迁移" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffebee;strokeColor=#c62828;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="640" y="520" width="500" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="a" target="b"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="b" target="c"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="c" target="d"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="b" target="e"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="d" target="e"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

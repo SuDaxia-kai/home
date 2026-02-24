@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Note Summary"
+  short_description: "结构化论文学习笔记总结模板与流程"
+  default_prompt: "Use $paper-note-summary to summarize this paper into the fixed Chinese study-note format with assumptions, methods, experiments, and critique."

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <rect width="1400" height="760" fill="#f8fbff"/>
+  <text x="700" y="58" text-anchor="middle" font-size="38" font-family="Arial, sans-serif" font-weight="700" fill="#1b3d5a">深度扩展消融（重绘）</text>
+  <text x="700" y="96" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#365a73">展示论文主张的临界深度现象（约 32-64 层）</text>
+
+  <line x1="120" y1="620" x2="1320" y2="620" stroke="#4d6b82" stroke-width="2"/>
+  <line x1="120" y1="180" x2="120" y2="620" stroke="#4d6b82" stroke-width="2"/>
+  <line x1="120" y1="510" x2="1320" y2="510" stroke="#d7e4ef" stroke-width="1"/>
+  <line x1="120" y1="400" x2="1320" y2="400" stroke="#d7e4ef" stroke-width="1"/>
+  <line x1="120" y1="290" x2="1320" y2="290" stroke="#d7e4ef" stroke-width="1"/>
+
+  <text x="80" y="620" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">0</text>
+  <text x="80" y="510" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">20</text>
+  <text x="80" y="400" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">40</text>
+  <text x="80" y="290" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">60</text>
+  <text x="80" y="180" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">80</text>
+
+  <polyline points="170,560 320,530 470,480 620,390 770,300 920,270 1070,255 1220,245" fill="none" stroke="#2d7fb8" stroke-width="6"/>
+  <circle cx="170" cy="560" r="8" fill="#2d7fb8"/>
+  <circle cx="320" cy="530" r="8" fill="#2d7fb8"/>
+  <circle cx="470" cy="480" r="8" fill="#2d7fb8"/>
+  <circle cx="620" cy="390" r="8" fill="#2d7fb8"/>
+  <circle cx="770" cy="300" r="8" fill="#2d7fb8"/>
+  <circle cx="920" cy="270" r="8" fill="#2d7fb8"/>
+  <circle cx="1070" cy="255" r="8" fill="#2d7fb8"/>
+  <circle cx="1220" cy="245" r="8" fill="#2d7fb8"/>
+
+  <text x="170" y="660" text-anchor="middle" font-size="20" font-family="Arial" fill="#365a73">4</text>
+  <text x="320" y="660" text-anchor="middle" font-size="20" font-family="Arial" fill="#365a73">8</text>
+  <text x="470" y="660" text-anchor="middle" font-size="20" font-family="Arial" fill="#365a73">16</text>
+  <text x="620" y="660" text-anchor="middle" font-size="20" font-family="Arial" fill="#365a73">32</text>
+  <text x="770" y="660" text-anchor="middle" font-size="20" font-family="Arial" fill="#365a73">64</text>
+  <text x="920" y="660" text-anchor="middle" font-size="20" font-family="Arial" fill="#365a73">128</text>
+  <text x="1070" y="660" text-anchor="middle" font-size="20" font-family="Arial" fill="#365a73">256</text>
+  <text x="1220" y="660" text-anchor="middle" font-size="20" font-family="Arial" fill="#365a73">1024</text>
+
+  <line x1="695" y1="180" x2="695" y2="620" stroke="#e56b6f" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="710" y="210" font-size="22" font-family="Arial" fill="#b7474b">临界深度区间 (32 - 64)</text>
+  <text x="160" y="705" font-size="22" font-family="Arial" fill="#365a73">网络深度 D（层）</text>
+  <text x="40" y="170" font-size="22" font-family="Arial" fill="#365a73" transform="rotate(-90,40,170)">归一化分数（示意重绘）</text>
+</svg>

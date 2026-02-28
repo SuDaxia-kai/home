@@ -1,4 +1,4 @@
 interface:
-  display_name: "Paper Note Summary"
+  display_name: "论文笔记总结"
   short_description: "结构化论文学习笔记总结模板与流程"
-  default_prompt: "Use $paper-note-summary to summarize this paper into the fixed Chinese study-note format with assumptions, methods, experiments, and critique."
+  default_prompt: "使用 $paper-note-summary 按固定中文学习笔记模板总结这篇论文，覆盖假设、方法、实验与 critique。"

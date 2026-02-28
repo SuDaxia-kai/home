@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#f8fbff"/>
+  <text x="600" y="52" text-anchor="middle" font-size="34" font-family="Arial" font-weight="700" fill="#1b3d5a">Maze2D 行为可视化（示意）</text>
+  <rect x="80" y="110" width="480" height="340" fill="#eef4fa" stroke="#bfd3e3" stroke-width="2"/>
+  <rect x="640" y="110" width="480" height="340" fill="#eef4fa" stroke="#bfd3e3" stroke-width="2"/>
+  <text x="320" y="150" text-anchor="middle" font-size="24" font-family="Arial" fill="#3f6078">浅层策略（对照）</text>
+  <text x="880" y="150" text-anchor="middle" font-size="24" font-family="Arial" fill="#3f6078">Scaled CRL（深层）</text>
+  <polyline points="140,390 180,350 220,360 260,320 300,330 340,300 380,310 430,260 500,220" fill="none" stroke="#8ca6bb" stroke-width="7"/>
+  <polyline points="700,410 740,380 780,330 820,300 860,260 900,240 950,220 1000,200 1060,180" fill="none" stroke="#2d7fb8" stroke-width="7"/>
+  <circle cx="140" cy="390" r="9" fill="#4d6b82"/>
+  <circle cx="1060" cy="180" r="9" fill="#1d5f8a"/>
+  <text x="140" y="430" font-size="20" font-family="Arial" fill="#4d6b82">起点</text>
+  <text x="1030" y="215" font-size="20" font-family="Arial" fill="#1d5f8a">目标</text>
+</svg>

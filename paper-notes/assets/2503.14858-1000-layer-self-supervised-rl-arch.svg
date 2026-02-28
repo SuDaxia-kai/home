@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1850" height="820" viewBox="0 0 1850 820">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3 L0,6 z" fill="#1b3d5a"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1850" height="820" fill="#f7fbff"/>
+  <text x="925" y="58" text-anchor="middle" font-size="36" font-family="Arial, sans-serif" font-weight="700" fill="#1b3d5a">Scaled CRL 网络框架（推断）</text>
+
+  <rect x="60" y="180" width="260" height="130" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="190" y="255" text-anchor="middle" font-size="26" font-family="Arial, sans-serif" fill="#1b3d5a">输入：状态 s_t</text>
+
+  <rect x="60" y="400" width="260" height="130" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="190" y="475" text-anchor="middle" font-size="26" font-family="Arial, sans-serif" fill="#1b3d5a">条件：目标 g</text>
+
+  <rect x="460" y="250" width="470" height="220" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="695" y="315" text-anchor="middle" font-size="29" font-family="Arial, sans-serif" fill="#1b3d5a">共享 MLP trunk</text>
+  <text x="695" y="360" text-anchor="middle" font-size="26" font-family="Arial, sans-serif" fill="#1b3d5a">深度 D 可扩展到 1024</text>
+  <text x="695" y="405" text-anchor="middle" font-size="26" font-family="Arial, sans-serif" fill="#1b3d5a">LayerNorm + ReLU</text>
+
+  <rect x="1060" y="170" width="320" height="140" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="1220" y="230" text-anchor="middle" font-size="25" font-family="Arial, sans-serif" fill="#1b3d5a">Critic 表征</text>
+  <text x="1220" y="270" text-anchor="middle" font-size="25" font-family="Arial, sans-serif" fill="#1b3d5a">phi(s,a), psi(g)</text>
+
+  <rect x="1060" y="420" width="320" height="140" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="1220" y="480" text-anchor="middle" font-size="25" font-family="Arial, sans-serif" fill="#1b3d5a">Actor policy</text>
+  <text x="1220" y="520" text-anchor="middle" font-size="25" font-family="Arial, sans-serif" fill="#1b3d5a">pi(a|s,g)</text>
+
+  <rect x="1490" y="280" width="300" height="170" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="1640" y="345" text-anchor="middle" font-size="25" font-family="Arial, sans-serif" fill="#1b3d5a">输出：Q(s,a,g)</text>
+  <text x="1640" y="385" text-anchor="middle" font-size="25" font-family="Arial, sans-serif" fill="#1b3d5a">与动作 a_t</text>
+
+  <line x1="320" y1="245" x2="460" y2="310" stroke="#1b3d5a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="320" y1="465" x2="460" y2="410" stroke="#1b3d5a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="930" y1="305" x2="1060" y2="240" stroke="#1b3d5a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="930" y1="420" x2="1060" y2="490" stroke="#1b3d5a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1380" y1="240" x2="1490" y2="330" stroke="#1b3d5a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1380" y1="490" x2="1490" y2="390" stroke="#1b3d5a" stroke-width="4" marker-end="url(#arrow)"/>
+</svg>

@@ -1,0 +1,39 @@
+<mxfile host="app.diagrams.net" modified="2026-02-24T23:59:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="scaled-crl-arch" name="Page-1">
+    <mxGraphModel dx="1700" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Scaled CRL 网络框架（推断）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#1b3d5a;fontStyle=1;fontSize=36;" vertex="1" parent="1">
+          <mxGeometry x="720" y="40" width="960" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="in1" value="输入：状态 s_t" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="120" y="220" width="300" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="in2" value="条件：目标 g" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="120" y="430" width="300" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="core" value="共享 MLP trunk&#xa;深度 D 可扩展到 1024&#xa;LayerNorm + ReLU" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="570" y="280" width="520" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="head1" value="Critic 表征&#xa;phi(s,a), psi(g)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="200" width="360" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="head2" value="Actor policy&#xa;pi(a|s,g)" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="430" width="360" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="out" value="输出：Q(s,a,g) 与动作 a_t&#xa;用于更新 critic 与 actor" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1730" y="300" width="420" height="180" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1b3d5a;strokeWidth=4;endArrow=block;endFill=1;" edge="1" parent="1" source="in1" target="core"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1b3d5a;strokeWidth=4;endArrow=block;endFill=1;" edge="1" parent="1" source="in2" target="core"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1b3d5a;strokeWidth=4;endArrow=block;endFill=1;" edge="1" parent="1" source="core" target="head1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1b3d5a;strokeWidth=4;endArrow=block;endFill=1;" edge="1" parent="1" source="core" target="head2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1b3d5a;strokeWidth=4;endArrow=block;endFill=1;" edge="1" parent="1" source="head1" target="out"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1b3d5a;strokeWidth=4;endArrow=block;endFill=1;" edge="1" parent="1" source="head2" target="out"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

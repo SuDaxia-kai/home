@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" modified="2026-02-24T23:58:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="scaled-crl-flow" name="Page-1">
+    <mxGraphModel dx="1700" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Scaled CRL 方法流程（推断流程图）" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#1b3d5a;fontStyle=1;fontSize=36;" vertex="1" parent="1">
+          <mxGeometry x="650" y="40" width="1100" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="a" value="无奖励 / 无示范&#xa;目标条件探索环境" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="120" y="360" width="420" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="b" value="Contrastive RL (CRL)&#xa;InfoNCE 训练 critic&#xa;actor 最大化 critic" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="650" y="360" width="460" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="c" value="深度扩展&#xa;D=4 -> 8 -> 16 -> 32 -> 64&#xa;并测试到 256 / 1024" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="360" width="460" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="d" value="结果：2x - 50x 提升&#xa;8/10 环境优于基线&#xa;出现临界深度与新行为" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#1b3d5a;fillColor=#d9e8f2;fontColor=#1b3d5a;fontStyle=1;fontSize=24;align=center;verticalAlign=middle;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1790" y="360" width="460" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1b3d5a;strokeWidth=4;endArrow=block;endFill=1;" edge="1" parent="1" source="a" target="b">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1b3d5a;strokeWidth=4;endArrow=block;endFill=1;" edge="1" parent="1" source="b" target="c">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#1b3d5a;strokeWidth=4;endArrow=block;endFill=1;" edge="1" parent="1" source="c" target="d">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

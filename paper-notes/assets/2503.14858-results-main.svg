@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <rect width="1400" height="760" fill="#f8fbff"/>
+  <text x="700" y="58" text-anchor="middle" font-size="38" font-family="Arial, sans-serif" font-weight="700" fill="#1b3d5a">Scaled CRL 关键实验结果（重绘）</text>
+  <text x="700" y="96" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#365a73">依据论文 Table 1 与正文数值整理</text>
+
+  <line x1="120" y1="620" x2="1320" y2="620" stroke="#4d6b82" stroke-width="2"/>
+  <line x1="120" y1="180" x2="120" y2="620" stroke="#4d6b82" stroke-width="2"/>
+
+  <text x="80" y="620" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">0</text>
+  <text x="80" y="510" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">20</text>
+  <text x="80" y="400" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">40</text>
+  <text x="80" y="290" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">60</text>
+  <text x="80" y="180" text-anchor="end" font-size="20" font-family="Arial" fill="#4d6b82">80</text>
+
+  <line x1="120" y1="510" x2="1320" y2="510" stroke="#d7e4ef" stroke-width="1"/>
+  <line x1="120" y1="400" x2="1320" y2="400" stroke="#d7e4ef" stroke-width="1"/>
+  <line x1="120" y1="290" x2="1320" y2="290" stroke="#d7e4ef" stroke-width="1"/>
+
+  <rect x="220" y="341" width="110" height="279" fill="#9fb7ca"/>
+  <rect x="350" y="248" width="110" height="372" fill="#2d7fb8"/>
+  <text x="275" y="650" text-anchor="middle" font-size="19" font-family="Arial" fill="#233f52">平均分</text>
+  <text x="275" y="675" text-anchor="middle" font-size="18" font-family="Arial" fill="#476579">50.6</text>
+  <text x="405" y="675" text-anchor="middle" font-size="18" font-family="Arial" fill="#1d5f8a">62.4</text>
+
+  <rect x="620" y="428" width="110" height="192" fill="#9fb7ca"/>
+  <rect x="750" y="252" width="110" height="368" fill="#2d7fb8"/>
+  <text x="740" y="650" text-anchor="middle" font-size="19" font-family="Arial" fill="#233f52">AntMaze (umaze-diverse)</text>
+  <text x="675" y="675" text-anchor="middle" font-size="18" font-family="Arial" fill="#476579">34.9</text>
+  <text x="805" y="675" text-anchor="middle" font-size="18" font-family="Arial" fill="#1d5f8a">66.8</text>
+
+  <rect x="1010" y="433" width="110" height="187" fill="#9fb7ca"/>
+  <rect x="1140" y="290" width="110" height="330" fill="#2d7fb8"/>
+  <text x="1130" y="650" text-anchor="middle" font-size="19" font-family="Arial" fill="#233f52">SOTA 任务数</text>
+  <text x="1065" y="675" text-anchor="middle" font-size="18" font-family="Arial" fill="#476579">~5/10</text>
+  <text x="1195" y="675" text-anchor="middle" font-size="18" font-family="Arial" fill="#1d5f8a">8/10</text>
+
+  <rect x="920" y="110" width="370" height="120" fill="#edf5fb" stroke="#b8cfdf"/>
+  <text x="1105" y="155" text-anchor="middle" font-size="22" font-family="Arial" font-weight="700" fill="#1b3d5a">图例</text>
+  <rect x="960" y="175" width="34" height="22" fill="#9fb7ca"/>
+  <text x="1010" y="193" font-size="19" font-family="Arial" fill="#365a73">先前最佳/基线</text>
+  <rect x="1160" y="175" width="34" height="22" fill="#2d7fb8"/>
+  <text x="1210" y="193" font-size="19" font-family="Arial" fill="#365a73">Scaled CRL</text>
+</svg>

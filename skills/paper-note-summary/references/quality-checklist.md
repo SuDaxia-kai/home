@@ -1,22 +1,30 @@
-# Paper Note Quality Checklist
+# 论文笔记质量核对清单
 
-- All five sections exist in the required order.
-- Heading hierarchy is valid: one `#` title, `##` sections, and `###` question prompts.
-- Question prompts are headings, not bullet list items.
-- Markdown file is written under `paper-notes/` and path is returned.
-- Process/logic/algorithm/model parts that are hard to explain with text include diagram support.
-- At least one human-readable diagram image exists (`paper-notes/assets/*.svg` or `*.png`) and is embedded in the Markdown.
-- If a paper figure is used, caption includes source location (Figure number or section).
-- If a diagram is self-drawn, matching `draw.io` source exists (`paper-notes/assets/*.drawio`).
-- Diagram layout has no overlap between boxes, labels, and arrows.
-- Diagram is visually balanced (prefer symmetric/grid alignment).
-- Multi-arrow routing keeps visible spacing and avoids crossings when possible.
-- Formulas use valid Markdown LaTeX syntax (`$...$` or `$$...$$`), not backticks.
-- Half-width spaces exist between Chinese-English, Chinese-number, and English-number boundaries.
-- Missing fields are marked as `N/A` with reason.
-- Research problem includes motivation and constraints.
-- Method section includes model I/O and training objective.
-- Experiment section includes setup and baseline comparison.
-- Summary includes contribution, strengths, and critiques.
-- Inferred points are explicitly marked with `推断：`.
-- No fabricated numbers, equations, or citations.
+- 五个主章节均存在，且顺序正确。
+- 标题层级合法：仅一个 `#` 标题、`##` 章节、`###` 问题提示。
+- 问题提示使用标题，而非列表项。
+- Markdown 文件写入 `paper-notes/`，并已返回文件路径。
+- 对于难以仅靠文字解释的流程/逻辑/算法/模型部分，已提供图示支持。
+- 图示数量由解释覆盖需求决定，而非固定最小值。
+- 若论文核心包含以下方面，已覆盖对应图示：问题设定、方法流程、逻辑推导、算法/框架、网络结构、结论证据链。
+- 当流程或推理链是核心时，至少包含 1 张流程/逻辑图。
+- 当模型设计是核心时，至少包含 1 张算法/框架图或网络结构图。
+- 算法/网络图清晰展示 `输入 -> 核心网络/模块 -> 输出` 与关键条件信号。
+- 若使用论文原图，图注包含来源位置（Figure 编号或 section）。
+- 若论文存在可用架构图，已优先纳入原图（截图/裁剪）；若未使用，已解释原因。
+- 若为自绘图，存在对应 `draw.io` 源文件（`paper-notes/assets/*.drawio`）。
+- 图示布局无框体、标签、箭头重叠。
+- 图示视觉上平衡（优先对称/网格对齐）。
+- 多箭头路由保持可见间距，尽量避免交叉。
+- 公式使用合法 Markdown LaTeX（`$...$` 或 `$$...$$`），未使用反引号。
+- 中文-英文、中文-数字、英文-数字边界已使用半角空格。
+- 缺失字段使用 `N/A` 标注并附原因。
+- 研究问题部分包含动机与约束条件。
+- 方法部分包含模型输入输出与训练目标。
+- 关键模块若继承自先前工作，已标注来源（作者/方法名 + 年份）并说明本文改造点。
+- 每个关键 trick 均说明：解决的问题、具体做法、为何有效。
+- 实验部分包含实验设置与 baseline 对比。
+- 总结部分包含贡献、亮点与 critiques。
+- 推断内容明确标注 `推断：`。
+- 未编造数字、公式或引用。
+- 关键图（如 Figure 1）裁剪完整，无模块/箭头/标题截断。

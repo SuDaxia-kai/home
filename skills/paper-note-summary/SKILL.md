@@ -1,114 +1,190 @@
 ---
 name: paper-note-summary
-description: Summarize academic papers into structured learning notes with a fixed template covering metadata, research question, technical methods, experiments, and critique. Use when the user asks to summarize a paper, extract key ideas, compare methods, or produce repeatable paper notes (especially in Chinese).
+description: 按固定模板将学术论文总结为结构化学习笔记，覆盖元信息、研究问题、技术方法、实验与批判性分析。适用于用户要求论文总结、关键思想提炼、方法对比，或批量生成中文论文笔记。
 ---
 
-# Paper Note Summary Workflow
+# 论文笔记总结工作流
 
-Follow this workflow to produce consistent, high-signal paper notes.
+请按以下流程产出一致且高信息密度的论文笔记。
 
-## 1) Gather Inputs
+## 1) 收集输入
 
-Collect as much paper context as available:
-- title, authors, affiliation, publication year/venue
-- paper URL and PDF (if provided)
-- user focus (for example: method details, experiments, critique)
+尽可能收集完整论文上下文：
+- title、authors、affiliation、publication year/venue
+- paper URL 与 PDF（若用户提供）
+- 用户关注点（例如：方法细节、实验对比、批判分析）
 
-If a field is unavailable, write `N/A` and briefly state `未在论文中明确给出`.
+若字段缺失，填写 `N/A`，并简要说明 `未在论文中明确给出`。
 
-## 2) Extract Core Content
+硬性门槛（必需）：
+- 若无法访问论文 PDF/原文，必须停止并请求用户协助（例如：上传 PDF 或授予访问）。
+- 不允许基于记忆直接总结。
+- 在缺少原文时，不允许臆造标题/方法/指标。
 
-Read the paper in this order:
-1. abstract + intro: define problem and motivation
-2. method section: framework, modules, objectives, losses
-3. experiment section: setup, baselines, key results
-4. discussion/conclusion: limits and future directions
+## 2) 提取核心内容
 
-Separate facts from inference:
-- factual claims: state directly
-- inferred claims: prefix with `推断：`
+按以下顺序阅读论文：
+1. abstract + intro：明确问题定义与研究动机
+2. method section：梳理框架、模块、目标函数与 loss
+3. experiment section：记录设置、baseline 与关键结果
+4. discussion/conclusion：总结局限与未来方向
 
-Do not invent equations, metrics, or implementation details.
+区分事实与推断：
+- factual claims：直接陈述
+- inferred claims：前缀 `推断：`
 
-## 3) Output Format (Use Exactly)
+不允许编造公式、指标或实现细节。
 
-Use the template in `references/paper-note-template.md`.
-Keep section order unchanged.
-Use concise bullet points.
-Use strict heading hierarchy:
-- one H1 only: `# 论文总结`
-- section titles as H2 (`##`)
-- question prompts as H3 (`###`)
+方法来源可追溯（必需）：
+- 若关键方法/模块来自先前工作（例如 latent action、Self Forcing 等），必须在对应段落标注来源。
+- 来源至少包含：`作者/方法名 + 年份`，并说明“本文如何使用/改造该方法”。
+- 不可只写“受启发于某工作”而不说明具体继承点。
 
-Do not represent question prompts as list items.
-If details need enumeration under a prompt, use flat bullet lists under that H3 heading.
+## 3) 输出格式（严格执行）
 
-Include diagrams whenever text alone is insufficient:
-- required: for process logic, algorithm framework, and model architecture that are hard to explain with text
-- preferred source: screenshot/crop from the paper figure
-- fallback: draw with `draw.io` only when the paper has no suitable figure
-- if the diagram is inferred from text, label it as `推断流程图`
+必须使用 `references/paper-note-template.md` 模板。
+保持章节顺序不变。
+使用简洁要点式表达。
+标题层级严格如下：
+- 仅一个 H1：`# 论文总结`
+- 一级章节使用 H2（`##`）
+- 问题提示使用 H3（`###`）
 
-## 4) Formatting Rules (Required)
+问题提示不得写成列表项。
+若某个提示下需要展开，使用该 H3 下的 bullet 列表。
+当存在明确父子语义时可使用分层 bullet（例如：`核心难点有两个：` 后接两个子点）。
+不要为了“全同级”而破坏语义结构。
+模板里的“提示文字/引导句”（例如“围绕……展开”“按以下问题回答”）仅用于写作约束，不得原样出现在最终笔记正文。
 
-Apply the following formatting rules to the final Markdown content.
+方法章节写作规则（必需）：
+- `技术方法` 必须围绕 `针对问题 -> 采用的方法 -> 为什么有效` 组织。
+- 方法叙事必须按顺序回答：
+  1. 整体技术框架与原理（系统有几个神经网络/模块、各自输入输出、作用目的、信号更新频率）
+  2. 具体算法（每个神经网络架构、输入输出、训练目标与 loss、数据来源、训练 tricks）
+- 对每个 `trick` 或关键设计，都要明确三点：
+  - 它在解决什么问题（不做会怎样）；
+  - 它具体怎么做（实现位置/作用路径）；
+  - 它为什么有效（机制解释或论文证据）。
+- 不要加入“只有图片无解释”的小节（例如：只放图不写文字）。
+- 图片必须服务于附近文本说明，并且文本需要使用 `如 Figure X 所示` 或 `如 Table Y 所示` 对图片或表格。
 
-### 4.1 Math Syntax
+当纯文本不足以解释时，必须加入图示：
+- 覆盖性要求：凡是理解论文的关键部分（问题设定、方法流程、逻辑推导、算法框架、网络结构、结论链路），优先图示支持。
+- 不追求固定图数量，以“解释清晰覆盖充分”为目标。
+- 算法/网络图必须至少明确 `输入 -> 核心网络/模块 -> 输出` 及关键信号（如 language/state/action/video）。
+- 优先来源：论文原图截图/裁剪。
+- 兜底方案：仅当论文无合适图时，使用 `draw.io` 绘制。
+- 若图是依据文字推断绘制，标注为 `推断流程图`。
 
-- Use Markdown LaTeX math syntax only:
-  - inline math: `$...$`
-  - block math: `$$...$$`
-- Do not wrap formulas with backticks.
-- Use proper LaTeX operators and symbols in math mode (for example, `\sim`, `\mid`, `\lambda`, `\mathcal{L}`).
-- Use braces for sub/superscripts when needed (for example, `$s_{t+1}$`, `$x^{(i)}$`).
+实验质量要求（必需）：
+- `实验结果` 章节必须同时包含：
+- 论文原始图（来自 PDF 或官方项目页的截图/裁剪），以及
+- 显式数值结论（不能只有视觉描述）。
+- 指标可解释性（必需）：
+  - 对文中使用的核心指标（如 PSNR/SSIM/LPIPS/FPS/成功率）至少给出一次“指标含义 + 方向（↑/↓）+ 在本文中证明什么”。
+  - 每个关键表/图后至少补 1 句“这张表/图在 show 什么”的读图结论，避免只报数字不解释。
+- 实验覆盖规则：
+- 为清晰准确解释所需的实验图都应纳入（不设固定最小数量），
+- 始终优先论文原图；仅在无可用原图时才使用 `draw.io`，
+- 至少包含 1 个紧凑 Markdown 表格，展示关键数值（baseline vs method vs delta），
+- 用简洁 bullet 说明每张图证明了什么。
 
-### 4.2 Spacing Rules
+## 4) 格式规则（必需）
 
-Always use half-width spaces for:
-- Chinese and English boundaries (example: `机器人 world model`)
-- Chinese and number boundaries (example: `训练 10 小时`)
-- English and number boundaries (example: `DreamDojo 14B`, `batch 512`)
+对最终 Markdown 内容应用以下规则。
 
-Keep punctuation in standard Markdown style and avoid full-width spaces.
+### 4.1 数学语法
 
-### 4.3 Diagram Rules
+- 仅使用 Markdown LaTeX 数学语法：
+  - 行内公式：`$...$`
+  - 块级公式：`$$...$$`
+- 公式不得使用反引号包裹。
+- 数学模式下使用正确 LaTeX 运算符与符号（例如：`\sim`、`\mid`、`\lambda`、`\mathcal{L}`）。
+- 需要时使用花括号包裹上下标（例如：`$s_{t+1}$`、`$x^{(i)}$`）。
 
-- Add one or more diagram items in the diagram section as needed.
-- First check whether the paper already provides a suitable figure:
-  - if yes, use a screenshot/crop of that figure
-  - if no, create a new figure with `draw.io`
-- For `draw.io`-created figures, save editable source as `.drawio`.
-- For `draw.io`-created figures, export a human-readable image (prefer SVG, fallback PNG).
-- Save diagram under `paper-notes/assets/`.
-- Embed the diagram in Markdown using image syntax: `![alt](relative/path)`.
-- For `draw.io`-created figures, keep source and export filenames aligned, for example:
+### 4.2 空格规则
+
+以下场景必须使用半角空格：
+- 中文与英文边界（例：`机器人 world model`）
+- 中文与数字边界（例：`训练 10 小时`）
+- 英文与数字边界（例：`DreamDojo 14B`、`batch 512`）
+
+标点遵循标准 Markdown 习惯，不要使用全角空格。
+
+### 4.3 图示规则
+
+- 按“解释清晰度”决定是否增补图示：
+  - 当问题-方法-结论链路是核心时，加入流程/逻辑图
+  - 当算法框架或网络结构是核心时，加入对应架构图
+- 先检查论文是否已有合适图：
+  - 若有，优先使用截图/裁剪
+  - 若无，使用 `draw.io` 新绘制
+- 若论文存在可用架构图，必须纳入该原图（截图/裁剪），而非仅文本替代。
+- 若论文在多个关键方面均有框架图（例如方法流程 + 结构图 + 训练/推理逻辑），应分别覆盖，不要压缩为单图。
+- `draw.io` 绘图需保存可编辑源文件 `.drawio`。
+- 同时导出可阅读图片（优先 SVG，兜底 PNG）。
+- 图文件保存到 `paper-notes/assets/`。
+- 在 Markdown 中用图片语法嵌入：`![alt](relative/path)`。
+- 若用户明确要求图片样式，允许并优先使用 HTML `figure` + `figcaption`（居中 + 图注）：
+  - `figure` 负责布局（例如 `text-align:center`）
+  - `img` 包含 `alt`
+  - `figcaption` 必须包含图号与页码/节号来源（例如 `图 1 (Page 3)`）
+- `draw.io` 源文件与导出文件命名保持对齐，例如：
   - `paper-notes/assets/<paper-id>-flow.drawio`
   - `paper-notes/assets/<paper-id>-flow.svg`
-- Keep node names short and map directly to paper modules/stages.
-- Add a one-line caption below the image.
-- If using a paper screenshot, include source location (figure number or section).
-- Enforce non-overlap: boxes, labels, and arrows must not overlap each other.
-- Prefer symmetric layout: align nodes on a grid, center key stages, and keep left-right balance.
-- For multiple arrows to one node, keep clear spacing between arrow paths and avoid merged crossings.
-- Route arrows to node edges (not through text area) and keep consistent arrowhead size.
+- 节点命名应短且直接映射论文模块/阶段。
+- 在图片 alt 文本中标注来源位置（例如：`Figure 2 (Page 3) ...`）。
+- 使用论文截图时，必须包含来源位置（figure 编号或 section）。
+- 从网页/PDF 获取的截图需保存本地副本到 `paper-notes/assets/`，并在 Markdown 中引用本地相对路径。
+- 最终笔记禁止依赖远程图片 URL（避免渲染失效）。
+- 强制无重叠：框、标签、箭头之间不得互相遮挡。
+- 优先对称布局：网格对齐、关键阶段居中、左右平衡。
+- 多箭头汇聚同一节点时保持路径间距，尽量避免交叉。
+- 箭头连接到节点边缘（不要穿过文本区域），并保持箭头样式一致。
 
-## 5) Write Markdown File (Required)
+### 4.4 PDF 图表裁剪与校验（必需）
 
-Always write the final result to a Markdown file instead of only replying in chat.
+- 若用户提供本地 PDF（例如 `/Users/.../*.pdf`），必须优先使用该文件，而不是历史下载副本。
+- 批量裁剪前，必须基于该 PDF 完成页码校验：
+  - 渲染目标附近页面，
+  - 目视确认目标 `Figure 1`、`Table 3` 等确实位于该页，
+  - 再确定最终裁剪坐标。
+- 裁剪范围仅保留解释目标：
+  - 保留图/表主体，可选保留 caption，
+  - 尽量排除无关正文段落。
+- 若首版裁剪包含无关大段文本或缺失关键区域，视为无效，必须重裁。
+- 每张导出裁剪图都必须做可视化 QA：
+  - 打开图片确认目标正确，
+  - 检查是否存在页码偏移错误（例如把 Introduction 当作 `Figure 1`）。
+- 对关键图（尤其总览框架图，如 Figure 1）额外检查“完整性”：
+  - 关键模块、箭头、标题/图号未被截断；
+  - 若裁剪不完整，必须立刻重裁后覆盖同名文件。
+- 输出文件名保持稳定（例如 `<paper-id>-fig1-crop.png`），修正时覆盖错误文件，避免 Markdown 链接漂移。
+- Markdown alt 文本中的来源位置必须来自“已校验 PDF 版本”（例如 `Figure 1 (Page 3)`），不能基于未验证猜测。
 
-- Default output directory: `paper-notes/` (create it if missing)
-- Filename priority:
-  1. arXiv paper: `<arxiv-id>-<short-slug>.md` (example: `2602.06949-dreamdojo.md`)
-  2. Non-arXiv paper: `<year>-<short-slug>.md`
-  3. If metadata is incomplete: `paper-note-<YYYYMMDD>-<short-slug>.md`
-- Slug rules: lowercase, letters/digits/hyphen only, max 6 words
-- File content: must follow `references/paper-note-template.md` exactly
+## 5) 写入 Markdown 文件（必需）
 
-After writing the file, return:
-- absolute file path
-- one-line status summary
+最终结果必须写入 Markdown 文件，不能只在对话中回复。
 
-## 6) Quality Gate Before Finalizing
+- 默认输出目录：`paper-notes/`（若不存在则创建）
+- 文件名优先级：
+  1. arXiv 论文：`<arxiv-id>-<short-slug>.md`（例：`2602.06949-dreamdojo.md`）
+  2. 非 arXiv 论文：`<year>-<short-slug>.md`
+  3. 元信息不完整：`paper-note-<YYYYMMDD>-<short-slug>.md`
+- slug 规则：小写，仅字母/数字/连字符，最多 6 个词
+- 文件内容：必须与 `references/paper-note-template.md` 结构完全一致
 
-Check all items in `references/quality-checklist.md`.
-If critical evidence is missing (for example, no baseline table), explicitly note uncertainty.
+写完文件后，返回：
+- 绝对路径
+- 一行状态摘要
+
+## 6) 交付前质量门禁
+
+逐项检查 `references/quality-checklist.md`。
+若关键证据缺失（例如无 baseline 对比表），明确写出不确定性。
+
+额外门禁（必需）：
+- `实验结果` 仅有文字无图，判定不通过。
+- `实验结果` 仅有图片无数值总结，判定不通过。
+- 至少 1 条图注包含精确来源位置，例如：`Figure 1 (Page 2)` 或 `Section 4.2, Figure 3`。
+- 最终 Markdown 的全部图片必须来自 `paper-notes/assets/` 本地文件并可正常渲染。

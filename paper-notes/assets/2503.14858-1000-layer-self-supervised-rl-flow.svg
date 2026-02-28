@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="760" viewBox="0 0 1800 760">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3 L0,6 z" fill="#1b3d5a"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1800" height="760" fill="#f7fbff"/>
+  <text x="900" y="58" text-anchor="middle" font-size="36" font-family="Arial, sans-serif" font-weight="700" fill="#1b3d5a">Scaled CRL 方法流程（推断流程图）</text>
+
+  <rect x="40" y="250" width="390" height="210" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="235" y="320" text-anchor="middle" font-size="27" font-family="Arial, sans-serif" fill="#1b3d5a">无奖励 / 无示范</text>
+  <text x="235" y="365" text-anchor="middle" font-size="27" font-family="Arial, sans-serif" fill="#1b3d5a">目标条件探索环境</text>
+
+  <rect x="480" y="250" width="390" height="210" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="675" y="305" text-anchor="middle" font-size="26" font-family="Arial, sans-serif" fill="#1b3d5a">Contrastive RL (CRL)</text>
+  <text x="675" y="350" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1b3d5a">InfoNCE 训练 critic</text>
+  <text x="675" y="395" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1b3d5a">actor 最大化 critic</text>
+
+  <rect x="920" y="250" width="390" height="210" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="1115" y="305" text-anchor="middle" font-size="26" font-family="Arial, sans-serif" fill="#1b3d5a">深度扩展</text>
+  <text x="1115" y="350" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1b3d5a">D=4 -> 8 -> 16 -> 32 -> 64</text>
+  <text x="1115" y="395" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1b3d5a">并测试到 256 / 1024</text>
+
+  <rect x="1360" y="250" width="390" height="210" fill="#d9e8f2" stroke="#1b3d5a" stroke-width="3"/>
+  <text x="1555" y="305" text-anchor="middle" font-size="26" font-family="Arial, sans-serif" fill="#1b3d5a">结果：2x - 50x 提升</text>
+  <text x="1555" y="350" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1b3d5a">8/10 环境优于基线</text>
+  <text x="1555" y="395" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1b3d5a">出现临界深度与新行为</text>
+
+  <line x1="430" y1="355" x2="480" y2="355" stroke="#1b3d5a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="870" y1="355" x2="920" y2="355" stroke="#1b3d5a" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1310" y1="355" x2="1360" y2="355" stroke="#1b3d5a" stroke-width="4" marker-end="url(#arrow)"/>
+</svg>
